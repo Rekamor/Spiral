@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TIpaLVopteQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\1092023\\Desktop\\C#\\WindowsForms\\Spiral\\Spiral\\Spiral.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\1092023\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
