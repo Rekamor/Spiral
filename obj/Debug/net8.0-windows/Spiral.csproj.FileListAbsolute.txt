@@ -17,3 +17,4 @@ C:\Users\1092023\Desktop\C#\WindowsForms\Spiral\Spiral\obj\Debug\net8.0-windows\
 C:\Users\1092023\Desktop\C#\WindowsForms\Spiral\Spiral\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\1092023\Desktop\C#\WindowsForms\Spiral\Spiral\obj\Debug\net8.0-windows\Spiral.csproj.AssemblyReference.cache
 C:\Users\1092023\Desktop\C#\WindowsForms\Spiral\Spiral\obj\Debug\net8.0-windows\Spiral.csproj.Up2Date
+C:\Users\1092023\Desktop\C#\WindowsForms\Spiral\Spiral\obj\Debug\net8.0-windows\Spiral.sourcelink.json
