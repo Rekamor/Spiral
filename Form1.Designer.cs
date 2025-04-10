@@ -30,31 +30,37 @@ partial class Form1
     private void InitializeComponent()
     {
         pictureBox = new PictureBox();
-        textBox1 = new TextBox();
+        ScaleBox = new TextBox();
         printButton = new Button();
         plusButton = new Button();
         minusButton = new Button();
+        sizeBox = new TextBox();
+        plusButton2 = new Button();
+        minusButton2 = new Button();
+        scaleLabel = new Label();
+        sizeLabel = new Label();
         ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
         SuspendLayout();
         // 
         // pictureBox
         // 
-        pictureBox.Location = new Point(0, 0);
+        pictureBox.Location = new Point(-23, -58);
         pictureBox.Name = "pictureBox";
         pictureBox.Size = new Size(2560, 1440);
         pictureBox.TabIndex = 0;
         pictureBox.TabStop = false;
         // 
-        // textBox1
+        // ScaleBox
         // 
-        textBox1.Location = new Point(2294, 1261);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new Size(232, 31);
-        textBox1.TabIndex = 1;
+        ScaleBox.Location = new Point(2294, 1243);
+        ScaleBox.Name = "ScaleBox";
+        ScaleBox.ReadOnly = true;
+        ScaleBox.Size = new Size(232, 31);
+        ScaleBox.TabIndex = 1;
         // 
         // printButton
         // 
-        printButton.Location = new Point(2294, 1298);
+        printButton.Location = new Point(2294, 1338);
         printButton.Name = "printButton";
         printButton.Size = new Size(232, 34);
         printButton.TabIndex = 2;
@@ -64,7 +70,7 @@ partial class Form1
         // 
         // plusButton
         // 
-        plusButton.Location = new Point(2294, 1338);
+        plusButton.Location = new Point(2294, 1280);
         plusButton.Name = "plusButton";
         plusButton.Size = new Size(112, 34);
         plusButton.TabIndex = 3;
@@ -74,7 +80,7 @@ partial class Form1
         // 
         // minusButton
         // 
-        minusButton.Location = new Point(2414, 1338);
+        minusButton.Location = new Point(2414, 1280);
         minusButton.Name = "minusButton";
         minusButton.Size = new Size(112, 34);
         minusButton.TabIndex = 4;
@@ -82,15 +88,66 @@ partial class Form1
         minusButton.UseVisualStyleBackColor = true;
         minusButton.Click += minusButton_Click;
         // 
+        // sizeBox
+        // 
+        sizeBox.Location = new Point(2294, 1130);
+        sizeBox.Name = "sizeBox";
+        sizeBox.ReadOnly = true;
+        sizeBox.Size = new Size(232, 31);
+        sizeBox.TabIndex = 5;
+        // 
+        // plusButton2
+        // 
+        plusButton2.Location = new Point(2294, 1167);
+        plusButton2.Name = "plusButton2";
+        plusButton2.Size = new Size(112, 34);
+        plusButton2.TabIndex = 6;
+        plusButton2.Text = "+";
+        plusButton2.UseVisualStyleBackColor = true;
+        plusButton2.Click += plusButton2_Click;
+        // 
+        // minusButton2
+        // 
+        minusButton2.Location = new Point(2414, 1167);
+        minusButton2.Name = "minusButton2";
+        minusButton2.Size = new Size(112, 34);
+        minusButton2.TabIndex = 7;
+        minusButton2.Text = "-";
+        minusButton2.UseVisualStyleBackColor = true;
+        minusButton2.Click += minusButton2_Click;
+        // 
+        // scaleLabel
+        // 
+        scaleLabel.AutoSize = true;
+        scaleLabel.Location = new Point(2294, 1215);
+        scaleLabel.Name = "scaleLabel";
+        scaleLabel.Size = new Size(91, 25);
+        scaleLabel.TabIndex = 8;
+        scaleLabel.Text = "Map scale";
+        // 
+        // sizeLabel
+        // 
+        sizeLabel.AutoSize = true;
+        sizeLabel.Location = new Point(2294, 1102);
+        sizeLabel.Name = "sizeLabel";
+        sizeLabel.Size = new Size(86, 25);
+        sizeLabel.TabIndex = 9;
+        sizeLabel.Text = "Point size";
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(2538, 1384);
+        Controls.Add(sizeLabel);
+        Controls.Add(scaleLabel);
+        Controls.Add(minusButton2);
+        Controls.Add(plusButton2);
+        Controls.Add(sizeBox);
         Controls.Add(minusButton);
         Controls.Add(plusButton);
         Controls.Add(printButton);
-        Controls.Add(textBox1);
+        Controls.Add(ScaleBox);
         Controls.Add(pictureBox);
         FormBorderStyle = FormBorderStyle.None;
         Name = "Form1";
@@ -104,8 +161,13 @@ partial class Form1
     #endregion
 
     private PictureBox pictureBox;
-    private TextBox textBox1;
+    private TextBox ScaleBox;
     private Button printButton;
     private Button plusButton;
     private Button minusButton;
+    private TextBox sizeBox;
+    private Button plusButton2;
+    private Button minusButton2;
+    private Label scaleLabel;
+    private Label sizeLabel;
 }
