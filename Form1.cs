@@ -5,44 +5,51 @@ public partial class Form1 : Form
 {
     private List<ulong> list;
     double scale { get; set; }
-    int size { get; set; }
+    double size { get; set; }
     public Form1()
     {
         InitializeComponent();
         scale = 1;
         size = 1;
         ScaleBox.Text = scale.ToString();
+        sizeBox.Text = size.ToString();
+
         list = JsonConvert.DeserializeObject<List<ulong>>(File.ReadAllText(Path.GetTempPath() + "Prime_Numbers.json"));
         //You can use List of any integer numbers
     }
 
     private void PrintSpiral()
     {
+        Random random = new Random();
         Bitmap bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
 
         for (int p = 0; p < list.Count; p++)
         {
-            int x = (int)Math.Round(Math.Sin(list[p]) * list[p] * scale) + pictureBox.Width / 2;
-            int y = (int)Math.Round(Math.Cos(list[p]) * list[p] * scale) + pictureBox.Height / 2;
-            if (y >= 0 && y <= pictureBox.Height - size && x >= 0 / 2 && x <= pictureBox.Width - size)
+            if (random.NextDouble() <= size)
             {
-                for (int i = 0; i < size; i++)
+                int x = (int)Math.Round(Math.Sin(list[p]) * list[p] * scale) + pictureBox.Width / 2;
+                int y = (int)Math.Round(Math.Cos(list[p]) * list[p] * scale) + pictureBox.Height / 2;
+                if (y >= 0 && y <= pictureBox.Height - size && x >= 0 / 2 && x <= pictureBox.Width - size)
                 {
-                    for (int j = 0; j < size; j++)
+                    for (int i = 0; i < size; i++)
                     {
-                        bitmap.SetPixel(x + i, y + j, Color.Black);
+                        for (int j = 0; j < size; j++)
+                        {
+                            bitmap.SetPixel(x + i, y + j, Color.Black);
+                        }
+                    }
+                }
+                else
+                {
+                    if (x < -189 || x > pictureBox.Width + 189)
+                    {
+                        pictureBox.Image = bitmap;
+                        return;
                     }
                 }
             }
-            else
-            {
-                if (x < -189 || x > pictureBox.Width + 189)
-                {
-                    pictureBox.Image = bitmap;
-                    return;
-                }
-            }
         }
+
         pictureBox.Image = bitmap;
     }
 
@@ -65,13 +72,13 @@ public partial class Form1 : Form
 
     private void plusButton2_Click(object sender, EventArgs e)
     {
-        size++;
+        size *= 2;
         sizeBox.Text = size.ToString();
     }
 
     private void minusButton2_Click(object sender, EventArgs e)
     {
-        size = Math.Max(1, size - 1);
+        size /= 2;
         sizeBox.Text = size.ToString();
     }
 }
